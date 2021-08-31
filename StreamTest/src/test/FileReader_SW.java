@@ -9,29 +9,29 @@ public class FileReader_SW {
 	  public static void main(String[] args)
 	    {    
 	     
-	        //  File °´Ã¼ÀÎ sw_file »ı¼º 
+	        //  File ê°ì²´ì¸ sw_file ìƒì„± 
 	        File sw_file = new File("SWTest");
 	        try
 	        {    
-	            // File °´Ã¼¸¦ »ı¼ºÇÏ¿© ¸Å°³º¯¼ö·Î ³Ñ°ÜÁÜ
+	            // File ê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ ë§¤ê°œë³€ìˆ˜ë¡œ ë„˜ê²¨ì¤Œ
 	            FileReader sw_reader = new FileReader(sw_file);
 	            
-	            // char_array ¹è¿­(Buffer)À» 64Å©±â·Î ¼±¾ğ
+	            // char_array ë°°ì—´(Buffer)ì„ 64í¬ê¸°ë¡œ ì„ ì–¸
 	            char[] char_array = new char[64];
 	            
 	            // sw_reader.read(char[] buf , offset , len);
 	            sw_reader.read(char_array, 0, char_array.length);
-	            // 0(offset) : ¾º¿©Áú ¹öÆÛÀÇ ½ÃÀÛ À§Ä¡
-	            // char_array.length(len) : µ¥ÀÌÅÍÀÇ ±æÀÌ Áï ¹®ÀÚ¿­À» ÀĞ¾î¿Ã¶§ ¹®ÀÚ¸¦ char_arrayÀÇ Å©±â¸¸Å­ ÀĞ¾î¿Â´Ù´Â ÀÇ¹Ì
+	            // 0(offset) : ì”Œì—¬ì§ˆ ë²„í¼ì˜ ì‹œì‘ ìœ„ì¹˜
+	            // char_array.length(len) : ë°ì´í„°ì˜ ê¸¸ì´ ì¦‰ ë¬¸ìì—´ì„ ì½ì–´ì˜¬ë•Œ ë¬¸ìë¥¼ char_arrayì˜ í¬ê¸°ë§Œí¼ ì½ì–´ì˜¨ë‹¤ëŠ” ì˜ë¯¸
 	                
 	            System.out.println(String.valueOf(char_array).trim());
-	            // String.valueOf() : ¹®ÀÚ¿­·Î Çüº¯È¯ ÇÏ´Â ¸Ş¼Òµå
-	            // trim() : ÇöÀç ¹®ÀÚ¿­¿¡¼­ ¸ğµç ºóÄ­(¶ç¾î¾²±â)¸¦ »èÁ¦ÇØÁÖ´Â ¸Ş¼Òµå
+	            // String.valueOf() : ë¬¸ìì—´ë¡œ í˜•ë³€í™˜ í•˜ëŠ” ë©”ì†Œë“œ
+	            // trim() : í˜„ì¬ ë¬¸ìì—´ì—ì„œ ëª¨ë“  ë¹ˆì¹¸(ë„ì–´ì“°ê¸°)ë¥¼ ì‚­ì œí•´ì£¼ëŠ” ë©”ì†Œë“œ
 	            
-	            sw_reader.close(); // FileReader °´Ã¼¸¦ ´Ù È°¿ëÇÏ¸é ¹İµå½Ã ´İ¾ÆÁà¾ß ÇÑ´Ù
-	                               // ¸¸¾à ´İÁö ¾Ê°í ÇÁ·Î±×·¥À» Á¾·áÇÏ°Ô µÇ¸é ÆÄÀÏ¿¡ µ¥ÀÌÅÍ°¡ ´Ù ¾º¿©Áö±âµµ Àü¿¡ ¼Õ½ÇÀÌ ÀÏ¾î³¯¼ö ÀÖ´Ù.
+	            sw_reader.close(); // FileReader ê°ì²´ë¥¼ ë‹¤ í™œìš©í•˜ë©´ ë°˜ë“œì‹œ ë‹«ì•„ì¤˜ì•¼ í•œë‹¤
+	                               // ë§Œì•½ ë‹«ì§€ ì•Šê³  í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•˜ê²Œ ë˜ë©´ íŒŒì¼ì— ë°ì´í„°ê°€ ë‹¤ ì”Œì—¬ì§€ê¸°ë„ ì „ì— ì†ì‹¤ì´ ì¼ì–´ë‚ ìˆ˜ ìˆë‹¤.
 	        }
-	        catch(FileNotFoundException e) // FileReader Å¬·¡½º °´Ã¼¸¦ »ı¼ºÇÒ¶§ ÇØÁÖ¾î¾ß ÇÏ´Â ¿¡¿ÜÃ³¸®·Î½á ÇØ´ç°æ·Î¿¡ ÆÄÀÏÀÌ ¾øÀ»¶§ ¹ß»ıÇÏ´Â ¿¹¿Ü
+	        catch(FileNotFoundException e) // FileReader í´ë˜ìŠ¤ ê°ì²´ë¥¼ ìƒì„±í• ë•Œ í•´ì£¼ì–´ì•¼ í•˜ëŠ” ì—ì™¸ì²˜ë¦¬ë¡œì¨ í•´ë‹¹ê²½ë¡œì— íŒŒì¼ì´ ì—†ì„ë•Œ ë°œìƒí•˜ëŠ” ì˜ˆì™¸
 	        {
 	            e.printStackTrace();
 	        }
@@ -39,5 +39,9 @@ public class FileReader_SW {
 	        {
 	            e.printStackTrace();
 	        }
+		catch(Exception e)
+		{
+			
+		}
 	    } 
 }
